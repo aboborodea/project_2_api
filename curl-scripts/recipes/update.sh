@@ -1,13 +1,16 @@
-# Ex: TOKEN=tokengoeshere ID=idgoeshere TEXT=textgoeshere sh curl-scripts/examples/update.sh
+#!/bin/bash
 
-curl "http://localhost:4741/examples/${ID}" \
+curl "http://localhost:4741/recipes/${ID}" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "example": {
-      "text": "'"${TEXT}"'"
+    "recipe": {
+      "title": "'"${TITLE}"'",
+      "ingredients": "'"${INGREDIENTS}"'",
+      "instructions": "'"${INSTRUCTIONS}"'",
+      "notes": "'"${NOTES}"'"
     }
   }'
 
