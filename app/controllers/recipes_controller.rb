@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class RecipesController < ProtectedController
-  before_action :set_recipe, only: %i[show update destroy]
+  before_action :set_recipe, only: %i[update destroy]
 
   # GET /recipes
   def index
